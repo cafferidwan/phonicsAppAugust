@@ -179,7 +179,7 @@ public class MenuPage extends SimpleBaseGameActivity implements IOnSceneTouchLis
 		menuBackground.setWidth(CAMERA_WIDTH);
 		menuScene.attachChild(menuBackground);
 		
-		AdminPanel.adminEnable=false;
+		//AdminPanel.adminEnable=false;
 		
 		//setAllMenuLetters
 		SetMenuLetters.setAllMenuLetters();
@@ -387,8 +387,8 @@ public class MenuPage extends SimpleBaseGameActivity implements IOnSceneTouchLis
 
 //		startActivity(new Intent(getBaseContext(), BoxGameActivity.class));
 			
-		MenuInstace.startActivity(new Intent(MenuInstace.getBaseContext(), MonkeyGameActivity.class));
-//		MenuInstace.startActivity(new Intent(MenuInstace.getBaseContext(), BoxGameActivity.class));
+//		MenuInstace.startActivity(new Intent(MenuInstace.getBaseContext(), MonkeyGameActivity.class));
+		MenuInstace.startActivity(new Intent(MenuInstace.getBaseContext(), BoxGameActivity.class));
 		MenuInstace.finish();
 		}
 	}

@@ -142,7 +142,7 @@ public class HandWritingMenu extends SimpleBaseGameActivity implements IOnSceneT
 		menuBackground.setWidth(CAMERA_WIDTH);
 		menuScene.attachChild(menuBackground);
 		
-		AdminPanel.adminEnable=false;
+		//AdminPanel.adminEnable=false;
 		
 		//set the menu letters
 		SetMenuLetters.setHandWritingMenuLetterIcon();

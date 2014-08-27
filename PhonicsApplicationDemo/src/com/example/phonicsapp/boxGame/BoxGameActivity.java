@@ -941,13 +941,13 @@ public class BoxGameActivity extends SimpleBaseGameActivity
 			
 			mScene.unregisterUpdateHandler(timer1);
 			BoxGameActivity.boxGameActivityInstance.finish();
-			//BoxGameActivity.boxGameActivityInstance.startActivity(new Intent(boxGameActivityInstance, BoxGameActivity.class));
+			BoxGameActivity.boxGameActivityInstance.startActivity(new Intent(boxGameActivityInstance, BoxGameActivity.class));
 			
 			
 			
-			//Unlock the letters
-			MenuPage.count();
-			BoxGameActivity.boxGameActivityInstance.startActivity(new Intent(boxGameActivityInstance, MenuPage.class));
+//			//Unlock the letters
+//			MenuPage.count();
+//			BoxGameActivity.boxGameActivityInstance.startActivity(new Intent(boxGameActivityInstance, MenuPage.class));
 		}
 		else if(letterLevelSelector[b] == 1)
 		{

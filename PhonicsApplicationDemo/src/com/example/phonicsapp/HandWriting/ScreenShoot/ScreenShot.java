@@ -14,6 +14,7 @@ import org.andengine.util.debug.Debug;
 
 import com.example.accountSystem.AccountDisplayPage;
 import com.example.accountSystem.AdminPanel;
+import com.example.phonicsapp.AdminGameMainPage;
 import com.example.phonicsapp.HandWriting.banglaletterwriting.GameActivity;
 import com.example.phonicsapp.HandWriting.banglaletterwriting.HandWritingMenu;
 
@@ -63,7 +64,7 @@ public class ScreenShot
 		GameActivity.cursor.setVisible(false);
 		//final float time = System.currentTimeMillis();
 		
-		GameActivity.screenCapture.capture((int) (GameActivity.BackgroundWidth*0.3), (int)((GameActivity.BackgroundWidth/1.7)*1/7), 
+		GameActivity.screenCapture.capture((int) (GameActivity.BackgroundWidth*0.3), (int)((GameActivity.BackgroundHeight/1.7)*1/7), 
 		GameActivity.viewWidth, GameActivity.viewHeight,FileUtils.getAbsolutePathOnExternalStorage( address )
 		, new IScreenCaptureCallback() 
 		{ 

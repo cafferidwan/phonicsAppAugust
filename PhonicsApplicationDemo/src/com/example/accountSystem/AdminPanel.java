@@ -3,6 +3,7 @@ package com.example.accountSystem;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.example.phonicsapp.AdminGameMainPage;
 import com.example.phonicsapp.MenuPage;
 import com.example.phonicsapp.R;
 import com.example.phonicsapp.HandWriting.banglaletterwriting.HandWritingMenu;
@@ -37,7 +38,7 @@ public class AdminPanel extends Activity
 		
 		mainListView = (ListView) findViewById( R.id.mainListView );  
 		buttonGame = (Button) findViewById(R.id.btnGame);
-		buttonHandWriting = (Button) findViewById(R.id.btnHandWriting);
+		//buttonHandWriting = (Button) findViewById(R.id.btnHandWriting);
 		
 	    ArrayList<String> studentList = new ArrayList<String>();  
 	    studentList.add(AccountDisplayPage.student1);  
@@ -77,22 +78,22 @@ public class AdminPanel extends Activity
 				// TODO Auto-generated method stub
 				adminEnable = true;
 				finish();
-				startActivity(new Intent(getBaseContext(), MenuPage.class));
+				startActivity(new Intent(getBaseContext(), AdminGameMainPage.class));
 			}
 		});
 	    
 	    //go to handwriting unlocked menu
-	    buttonHandWriting.setOnClickListener(new View.OnClickListener()
-	    {
-			@Override
-			public void onClick(View v) 
-			{
-				// TODO Auto-generated method stub
-				adminEnable = true;
-				finish();
-				startActivity(new Intent(getBaseContext(), HandWritingMenu.class));
-			}
-		});
+//	    buttonHandWriting.setOnClickListener(new View.OnClickListener()
+//	    {
+//			@Override
+//			public void onClick(View v) 
+//			{
+//				// TODO Auto-generated method stub
+//				adminEnable = true;
+//				finish();
+//				startActivity(new Intent(getBaseContext(), HandWritingMenu.class));
+//			}
+//		});
 	}
 	
 }

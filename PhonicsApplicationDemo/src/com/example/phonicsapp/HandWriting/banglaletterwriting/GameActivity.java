@@ -40,9 +40,11 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.media.MediaPlayer;
 import android.preference.PreferenceManager;
+import android.provider.Settings.Secure;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Display;
+import android.widget.Toast;
 
 public class GameActivity extends BaseGameActivity implements IOnSceneTouchListener 
 	{
@@ -209,10 +211,10 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 	{
 		// TODO Auto-generated method stub
 		MainActivityInstace = this;
-		Display display = getWindowManager().getDefaultDisplay();
+		//Display display = getWindowManager().getDefaultDisplay();
 		
-		BackgroundWidth = display.getWidth();
-		BackgroundHeight = display.getHeight();
+		BackgroundWidth = 800;//display.getWidth();
+		BackgroundHeight = 454;//display.getHeight();
 		
 		Debug.d(""+BackgroundWidth);
 		Debug.d(""+BackgroundHeight);
@@ -407,10 +409,17 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 
 	public String getDeviceIMEI() 
 	{
-		TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-		String device_id = tm.getDeviceId();
+//		TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+//		String device_id = tm.getDeviceId();
+		String identifier = null;
+		TelephonyManager tm = (TelephonyManager)getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
+		if (tm != null)
+		      identifier = tm.getDeviceId();
+		//Toast.makeText(getBaseContext(), "imei:"+identifier, Toast.LENGTH_LONG).show();
+		if (identifier == null || identifier .length() == 0)
+		      identifier = Secure.getString(getBaseContext().getContentResolver(),Secure.ANDROID_ID);
 
-		return device_id;
+		return identifier;
 	}
 	
 	public static String loadSavedPreferences(String key)

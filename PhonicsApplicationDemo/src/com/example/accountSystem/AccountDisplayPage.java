@@ -14,7 +14,9 @@ import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.provider.Settings.Secure;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -223,6 +225,7 @@ public class AccountDisplayPage extends Activity
  		 //if account picture is taken, then go to GameMainPage
  		 else
  		 {
+ 			 AdminPanel.adminEnable=false;
  			 instance.finish();
  			 instance.startActivity(new Intent(instance.getBaseContext(), GameMainPage.class));
  		 }
@@ -232,10 +235,18 @@ public class AccountDisplayPage extends Activity
 	
 	public String getDeviceIMEI() 
 	{
-		TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-		String device_id = tm.getDeviceId();
+//		TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+//		String device_id = tm.getDeviceId();
 
-		return device_id;
+		String identifier = null;
+		TelephonyManager tm = (TelephonyManager)getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
+		if (tm != null)
+		      identifier = tm.getDeviceId();
+		//Toast.makeText(getBaseContext(), "imei:"+identifier, Toast.LENGTH_LONG).show();
+		if (identifier == null || identifier .length() == 0)
+		      identifier = Secure.getString(getBaseContext().getContentResolver(),Secure.ANDROID_ID);
+
+		return identifier;
 	}
 	
 }

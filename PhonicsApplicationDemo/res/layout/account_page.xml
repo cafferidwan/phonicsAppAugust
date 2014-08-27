@@ -25,13 +25,6 @@
         android:layout_alignParentBottom="true" >
 
         <Button
-            android:id="@+id/btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1"
-            android:layout_weight="1" />
-
-        <Button
             android:id="@+id/adminPress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
